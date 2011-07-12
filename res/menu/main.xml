@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:titleCondensed="Fair Map" 
+		android:title="Fair Map"
+		android:id="@+id/menu_map" 
+		android:icon='@android:drawable/ic_menu_mapmode' />
+	<item android:titleCondensed="Schedule" 
+		android:title="Fair Schedule"
+		android:id="@+id/menu_schedule" 
+		android:icon="@android:drawable/ic_menu_agenda" />
+	<item android:titleCondensed="About" 
+		android:title="About this App"
+		android:id="@+id/menu_about" 
+		android:icon="@android:drawable/ic_menu_help" />
+</menu>

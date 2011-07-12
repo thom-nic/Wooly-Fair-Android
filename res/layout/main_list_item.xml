@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="?android:attr/listPreferredItemHeight">
+	<com.github.droidfu.widgets.WebImageView android:id="@+id/img_item" 
+		android:isScrollContainer='false'
+		android:layout_margin='6dp'
+		android:layout_width='48sp'
+		android:layout_height='48sp'
+		android:scaleType='centerInside'
+		android:layout_gravity='center_vertical'
+		android:src='@android:drawable/ic_menu_gallery' />
+	<TextView android:id="@+id/label_title"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:typeface='monospace'
+	    android:layout_marginRight='10dp'
+	    android:textAppearance="?android:attr/textAppearanceLarge"
+	    android:gravity="center_vertical"
+	    android:hint='(title)'
+	    android:layout_weight='1'
+	    android:singleLine="true" />
+</LinearLayout>

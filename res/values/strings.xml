@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Wooly Fair</string>
+    <string name="main_activity">Wooly Fair moon rock hunt</string>
+    
+    <string name='welcome_msg'><![CDATA[
+    Welcome to the Wooly Fair moon rock hunt!  Look for barcodes
+    scattered throughout the fair.  When you find one, scan it using the 
+    \'capture\' button.  If you find them all, you\'ll win a prize!]]></string>
+
+		<string name="msg_main_footer">Keep looking!  There are still %d cards still scattered around the fair.</string>
+    <string name="msg_please_wait">Please wait...</string>
+    <string name="msg_youve_found">You\'ve found %s!</string>
+    <string name="msg_already_found">You already found %s!  Try looking somewhere else.</string>
+    <string name="msg_found_unknown">What planet are you on??  I don\'t even know what that is.  Try looking somewhere else.</string>
+        
+        
+    <string name="btn_capture">Capture!</string>
+
+		<!-- Menu items -->
+    <string name="menu_add">Add</string>
+
+		<!-- UI Labels -->
+    <string name="label_target_name">Name</string>
+
+    <!-- Preferences -->
+    <string name="pref_cat_sync_options">Sync Options</string>
+    
+</resources>

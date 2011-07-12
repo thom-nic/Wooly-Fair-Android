@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin='20dp'
+    android:padding='15dp'
+    style='@android:style/Theme.Dialog'>
+  
+  <TextView android:text='Processing ...'
+  	android:layout_width='fill_parent'
+  	android:layout_height='wrap_content' 
+  	android:textAppearance='?android:attr/textAppearanceMedium' 
+  	android:gravity='center_horizontal'/>
+  <ProgressBar android:id="@+id/progressBar1"
+  	android:indeterminateOnly='true' 
+  	android:indeterminateDrawable='@anim/processing'
+  	android:layout_width='100dp'
+  	android:layout_height='100dp' 
+  	android:layout_gravity='center_horizontal'
+  	android:layout_marginTop='10dp' />     
+</LinearLayout>

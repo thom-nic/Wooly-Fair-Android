@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.thomnichols.android.wooly</groupId>
+	<artifactId>wooly-moon</artifactId>
+	<version>0.1-SNAPSHOT</version>
+		<packaging>apk</packaging>
+	<name>The Wooly Fair Moon rock game!</name>
+	<!-- See http://code.google.com/p/maven-android-plugin/wiki/GettingStarted 
+		for instructions -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<android.sdk.path>${env.ANDROID_HOME}</android.sdk.path>
+		<android.sdk.platform>2.2</android.sdk.platform>
+		<maven.test.skip>true</maven.test.skip>
+		<!-- 
+		<android.sdk.path>/Users/tnichols/dev/Android/android-sdk-mac_86</android.sdk.path>
+		 -->
+	</properties>
+
+   <dependencies>
+		<dependency>
+			<groupId>com.google.android</groupId>
+			<artifactId>android</artifactId>
+			<version>2.2.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.zxing</groupId>
+			<artifactId>zxing-android</artifactId>
+			<version>1.6-SNAPSHOT</version>
+			<type>apklib</type>
+		</dependency>
+		<dependency>
+			<groupId>com.github.droidfu</groupId>
+			<artifactId>droid-fu</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+		
+     <dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.5</version>
+			<scope>test</scope>
+		</dependency>
+   </dependencies>
+    
+	<build>
+		<!--<finalName>${artifactId}</finalName> -->
+		<plugins>
+			<plugin>
+				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
+				<artifactId>maven-android-plugin</artifactId>
+				<version>2.9.0-beta-4</version>
+				<configuration>
+					<deleteConflictingFiles>true</deleteConflictingFiles>
+					<jvmArguments>
+						<jvmArgument>-Xmx256m</jvmArgument>
+					</jvmArguments>
+				</configuration>
+				<extensions>true</extensions>
+			</plugin>
+	
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>apk-sign</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-jarsigner-plugin</artifactId>
+						<version>1.2</version>
+						<executions>
+							<execution>
+								<id>signing</id>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+								<phase>package</phase>
+								<inherited>true</inherited>
+								<configuration>
+									<archiveDirectory></archiveDirectory>
+									<includes>
+										<include>target/*.apk</include>
+									</includes>
+									<keystore>signer.jks</keystore>
+									<alias>assassin</alias>
+									<storepass>${keystore_pass}</storepass>
+									<!-- <keypass>${key_pass}</keypass> -->
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>com.jayway.maven.plugins.android.generation2</groupId>
+						<artifactId>maven-android-plugin</artifactId>
+						<version>2.9.0-beta-4</version>
+						<inherited>true</inherited>
+						<configuration>
+							<sign>
+								<debug>false</debug>
+							</sign>
+						</configuration>
+						<executions>
+							<execution>
+								<id>alignApk</id>
+								<phase>package</phase>
+								<goals>
+									<goal>zipalign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+	<repositories>
+		<repository>
+      <id>oauth</id>
+      <name>OAuth Repository</name>
+      <url>http://oauth.googlecode.com/svn/code/maven</url>
+      <snapshots><updatePolicy>never</updatePolicy></snapshots>
+    </repository>
+		<repository>
+			<id>google-api-services</id>
+			<url>http://mavenrepo.google-api-java-client.googlecode.com/hg</url>
+      <snapshots><updatePolicy>never</updatePolicy></snapshots>
+		</repository>
+	</repositories>
+</project>

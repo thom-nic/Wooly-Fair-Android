@@ -1,0 +1,20 @@
+Main Menu
+* Fair info
+* About the app
+
+* Fair info page
+ * schedule
+ * youtube link
+
+* About app page
+ * Author info
+ * source link
+ * Wikipedia CC license
+
+x Webpages for items
+* "You've found them all!"  do whatever for some prize!
+
+* Trade/ share by showing QR code on the screen
+
+* Found item sound
+* Rich media links (youtube video, audio clip playback, etc.) 

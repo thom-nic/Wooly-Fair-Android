@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:orientation="vertical"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent">
+
+	<LinearLayout android:id='@+id/title_bar' 
+		android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="62dp"
+    android:padding='4dp'
+    android:visibility='gone'
+    android:background='@drawable/title_bg'>
+   	<ImageView android:src='@drawable/icon'
+   		android:scaleType='centerInside'
+   		android:layout_width='56dp'
+   		android:layout_height='56dp' 
+   		android:layout_gravity='left|center_vertical'/>
+   	<TextView 
+   		android:layout_width='wrap_content'
+   		android:layout_height='fill_parent' 
+   		android:text="@string/app_name" 
+   		android:gravity='center_vertical' 
+   		android:layout_marginLeft='12dp'
+   		android:typeface='monospace'
+   		android:layout_weight='1'/>
+   	<Button android:id='@+id/btn_capture2'
+			android:drawableRight='@drawable/ic_menu_mylocation'
+   		android:layout_width='wrap_content'
+   		android:layout_height='fill_parent'
+   		android:typeface='monospace'
+   		android:gravity='center'
+   		android:layout_gravity='right|center_vertical' /> 
+  </LinearLayout>
+	     
+  <ListView android:id="@id/android:list"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_weight="1" 
+      android:drawSelectorOnTop="false"
+      android:background='@drawable/main_bg' />
+      
+  <ScrollView android:id='@id/android:empty'
+		android:fillViewport='true'
+		android:layout_width='fill_parent'
+		android:layout_height='fill_parent'>
+	<LinearLayout 
+   	android:layout_width='fill_parent'
+   	android:layout_height='wrap_content'
+   	android:orientation='vertical'
+   	android:layout_weight='1'>
+   	
+   	<ImageView android:src='@drawable/welcome'
+   		android:adjustViewBounds='true'
+   		android:scaleType='fitXY'
+   		android:layout_width='fill_parent'
+   		android:layout_height='wrap_content' />
+   	
+   	<TextView android:id='@+id/welcome_msg'
+   		android:text='@string/welcome_msg'
+ 			android:layout_width='fill_parent'
+			android:layout_height='wrap_content'
+			android:textAppearance='?android:attr/textAppearanceMedium'
+			android:textSize='15sp'
+   		android:typeface='monospace'
+			android:linksClickable='true' 
+			android:padding='10dp' />
+		<Button android:id="@+id/btn_capture"
+			android:text='@string/btn_capture'
+			android:drawableRight='@drawable/ic_menu_mylocation'
+   		android:typeface='monospace'
+			android:textAppearance='?android:attr/textAppearanceMedium'
+			android:layout_width='fill_parent'
+			android:layout_height='wrap_content'
+			android:layout_marginLeft='36dp'
+			android:layout_marginRight='36dp'
+			android:padding='14dp'
+			android:gravity='center'
+			android:layout_gravity='bottom|center_horizontal'/>
+	</LinearLayout>
+	</ScrollView>
+</LinearLayout>
